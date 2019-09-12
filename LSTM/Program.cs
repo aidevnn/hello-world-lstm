@@ -18,13 +18,14 @@ namespace LSTMsharp
             var tableIdx2Char = tableChar2Idx.ToDictionary(a => a.Value, b => b.Key);
 
             int iteration = 0;
-            int epochs = 2000;
+            int epochs = 4000;
             int displayEpoch = 250;
             int p = 0;
 
             int X_size = udata.Length;
             int H_size = X_size * 2;
-            int T_steps = word.Length; ;
+            int T_steps = word.Length;
+            Console.WriteLine($"X_size:{X_size} H_size:{H_size} T_steps:{T_steps}");
 
             var lstm = new LSTM(X_size, H_size, T_steps);
             var sw = Stopwatch.StartNew();
